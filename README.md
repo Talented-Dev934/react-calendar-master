@@ -1,196 +1,191 @@
 # React Calendar
 
-<img src="src/client/assets/cal-month.png" width="500"  />
-<img src="src/client/assets/cal-week.png" width="500"  />
-<img src="src/client/assets/cal-agenda.png" width="500"  />
+![Calendar Month View](src/client/assets/cal-month.png)
+![Calendar Week View](src/client/assets/cal-week.png)
+![Calendar Agenda View](src/client/assets/cal-agenda.png)
 
 ## Description
 
-**React Calendar** is an easy-to-use online calendar build with [React Big Calendar](https://jquense.github.io/react-big-calendar/examples/index.html?path=/story/about-big-calendar--page). This is a full-stack demo that shows how to integrate a complex third party UI library with the popular "MERN" development framework. There are architectural elements in place (e.g. Mongoose, Redux, JSON Web Token) to help developers easily scale up its functionality. It uses public API data available at the [Calendarific Holidays API](https://calendarific.com/api-documentation).
+**React Calendar** is an easy-to-use online calendar built with [React Big Calendar](https://jquense.github.io/react-big-calendar/examples/index.html?path=/story/about-big-calendar--page). This full-stack demo showcases how to integrate a complex third-party UI library with the popular "MERN" development framework. The project includes key architectural elements like Mongoose, Redux, and JSON Web Token (JWT) to scale functionality easily. It utilizes public data from the [Calendarific Holidays API](https://calendarific.com/api-documentation).
 
-**MERN**
+---
 
-React Calendar is an example of a "MERN stack" application which consists of the following technologies:
+### MERN Stack
 
--   **MongoDB**: A document-based open source database.
--   **Express**: A web application framework for Node.js.
--   **React**: A JavaScript front-end library for building user interfaces.
--   **Node.js**: JavaScript run-time environment that executes JavaScript code outside of a browser (such as a server).
+React Calendar is a prime example of a **MERN stack** application, which consists of the following technologies:
 
-The MERN stack makes it possible to quickly build and easily maintain a full-stack web app. For more information on the MERN stack, check out this [YouTube tutorial](https://www.youtube.com/watch?v=7CqJlxBYj-M).
+- **MongoDB**: A document-based open-source database.
+- **Express**: A web application framework for Node.js.
+- **React**: A JavaScript front-end library for building user interfaces.
+- **Node.js**: A JavaScript runtime environment that executes JavaScript code outside the browser.
 
-## File structure
+The MERN stack allows for rapid development and ease of maintenance of full-stack web apps. To learn more, check out this [YouTube tutorial](https://www.youtube.com/watch?v=7CqJlxBYj-M).
 
--   `src`
-    -   `config` - This folder holds app configuration files
-    -   `client` - This folder holds files used by the frontend
-        -   `assets` - This folder holds static assets such as images
-        -   `components` - This folder holds different components that will make up our views
-        -   `pages` - This folder holds components organized by page level view
-        -   `store` - This folder holds files used to connect to the Redux store and call actions
-        -   `styles` - This folder holds stylesheets (CSS modules) used by the frontend
-        -   `utils` - This folder holds frontend utility functions
-        -   `App.js` - Renders all of our browser routes and different views
-        -   `index.html` - Our index.html file
-        -   `index.css` - Stylesheet for app-wide styles
-        -   `index.js` - Entrypoint for React app
-        -   `validation.js` - Used for form validation
-    -   `server` - This folder holds files used by the backend
-        -   `controllers` - This folder holds controller functions used by Express.js
-        -   `db` - This folder holds database connection files
-        -   `middleware` - This folder holds middleware used by Express.js
-        -   `models` - This folder holds database models
-        -   `routers` - This folder holds routers used by Express.js
-        -   `services` - This folder holds services used to modify data
-        -   `utils` - This folder holds backend utility functions
-        -   `server-dev.js` - Entrypoint for Node.js app in development mode
-        -   `server-prod.js` - Entrypoint for Node.js app in production mode
--   `package.json` - Defines npm behaviors and packages
--   `package-lock.json` - Tracks dependency tree
--   `.babelrc` - Configuration file for Babel.js
--   `.env.example` - Sample file containing environment variables used by dotenv.js
--   `.gitignore` - Directories to exclude from git tracking
--   `.prettierrc` - Configuration file for Prettier.js
--   `.jest.config.js` - Configuration file for Jest.js
--   `.seedHolidayEvents.js` - Script for seeding holiday event documents in MongoDB
--   `.webpack.development.js` - Webpack configuration file for development mode settings
--   `.webpack.production.js` - Webpack configuration file for production mode settings
--   `README.md` - This file!
+---
 
-## Initial Setup
+## File Structure
 
-React Calendar was built using Node version 16. Please install a long-term support (LTS) version of Node for best compatibility with other libraries.
-
--   Node.js <https://nodejs.org/en/download/>
-
-To verify that you have Node.js installed on your system, type the following command in your command line terminal (Terminal for Mac/Linux, CMD for Windows).
-
-```console
-node -v
+```bash
+src
+├── config              # Configuration files for the app
+├── client              # Frontend files
+│   ├── assets          # Static assets (e.g. images)
+│   ├── components      # Reusable React components
+│   ├── pages           # Page-level components
+│   ├── store           # Redux store and actions
+│   ├── styles          # CSS Modules for styling
+│   ├── utils           # Utility functions
+│   ├── App.js          # Main React entry point
+│   ├── index.html      # HTML template
+│   ├── index.css       # Global styles
+│   ├── index.js        # Entry point for React app
+│   └── validation.js   # Form validation utilities
+├── server              # Backend files
+│   ├── controllers     # Express.js controllers
+│   ├── db              # Database connection files
+│   ├── middleware      # Middleware for Express.js
+│   ├── models          # MongoDB database models
+│   ├── routers         # Express.js route definitions
+│   ├── services        # Services for data handling
+│   └── utils           # Backend utility functions
+├── .babelrc            # Babel.js configuration
+├── .env.example        # Sample environment variables file
+├── .gitignore          # Files to exclude from version control
+├── .prettierrc         # Prettier.js configuration
+├── .jest.config.js     # Jest.js configuration
+├── .seedHolidayEvents.js # Script for seeding events to the DB
+├── .webpack.development.js # Webpack configuration for dev mode
+├── .webpack.production.js # Webpack configuration for prod mode
+└── README.md           # This file
 ```
 
-### Environment Variables
+## 🚀 Initial Setup
 
-Before you build or run the app, create two new files called `.env.development` and `.env.production` at the project root. These are configuration files that will be used by dotenv.js to expose environment variables to your app at runtime.
+React Calendar was built using **Node.js v16**. For the best compatibility, it's recommended to install a **long-term support (LTS)** version of Node.js.
 
-In each file, you need to enter values for the following environment variables (refer to `.env.example` for sample values):
+### Installation Instructions
 
-`PORT`: Port where the app will run
+1. **Download and Install Node.js:** [Node.js Official Website](https://nodejs.org/)
+2. **Verify Installation:**
+   ```bash
+   node -v
+   ```
 
-`MONGO_HOSTNAME`: Name of the Mongo host (e.g. `localhost` in development mode)
+## 🌱 Environment Variables
 
-`MONGO_PORT`: Mongo port (e.g. `27017`)
+Create the following configuration files in the project root:
 
-`MONGO_DB`: Name of the Mongo database used
+- `.env.development`
+- `.env.production`
 
-`API_URL`: Base URL for API calls to the Node app (e.g. `http://localhost:3001/api` in development mode)
+Refer to `.env.example` for sample values. Add the following environment variables:
 
-`CALENDARIFIC_KEY`: Base URL for the Calendarific API. You need to create a free Calendarific account in order to generate this key.
+| Variable | Description |
+|----------|-------------|
+| `PORT` | Port where the app will run |
+| `MONGO_HOSTNAME` | Mongo host (e.g., localhost for dev) |
+| `MONGO_PORT` | Mongo port (e.g., 27017) |
+| `MONGO_DB` | Mongo database name |
+| `API_URL` | Base API URL (e.g., `http://localhost:3001/api`) |
+| `CALENDARIFIC_KEY` | Calendarific API Key |
+| `JWT_SECRET_KEY` | JWT Private Key |
+| `JWT_EXPIRATION` | JWT expiration (seconds) |
+| `JWT_REFRESH_EXPIRATION` | JWT refresh expiration (seconds) |
 
-`JWT_SECRET_KEY`: Private key used by JSON Web Token (JWT)
+## 🗄️ MongoDB Setup
 
-`JWT_EXPIRATION`: JWT token expiration (in seconds)
+React Calendar works best with **MongoDB v4.4.6**, though external instances are supported.
 
-`JWT_REFRESH_EXPIRATION`: JWT refresh token expiration (in seconds)
+1. **Install MongoDB:** [Download MongoDB](https://www.mongodb.com/try/download)
+2. **Start MongoDB:**
+   ```bash
+   mongod
+   ```
+3. **Create Database:**
+   ```bash
+   mongo
+   use reactcalendar_db
+   db.app.insert({ _id: 1, message: "first doc" })
+   ```
 
-### MongoDB
+Verify your database using tools like [DbGate](https://dbgate.org) or [Robo 3T](https://robomongo.org/).
 
-React Calendar is designed to work best with a local installation of MongoDB (v4.4.6), but can be used with MongoDB instances located elsewhere.
+## 🌱 Seeding the Database
 
-First set up your local installation of MongoDB using instructions corresponding to your operating system.
+Seed default calendar events:
 
--   MongoDB <https://www.mongodb.com/try/download>
-
-Once those steps have been completed, and your MongoDB instance is up and running (typically using the terminal command `mongod`), you need to create a new database to store your React Calendar data. This can be done in several ways, but most commonly with the Mongo shell CLI which comes pre-installed with MongoDB. You can start the Mongo shell from your terminal using the `mongo` command. Once you are in the shell, create a new Mongo database (e.g. `use reactcalendar_db`). In some implementations, the database won't actually be created until you insert an initial document. In that case, just insert a dummy document using `db.app.insert({ _id: 1, message:'first doc'})`
-
-Once you've verified the new database has been created, just start the app in production mode to initialize your app data. The MongoDB database will automatically create default documents when you first run the app.
-
--   To run the app in production mode, follow the steps in **Run the app** below
-
-Once the workflow is complete, the following messages will appear in the terminal:
-
-```text
-  Connected to MongoDB
-  added "user" to roles collection
-  added "moderator" to roles collection
-  added "admin" to roles collection
-  added "US Holidays" to calendars collection
+```bash
+node seedHolidayEvents.js
 ```
 
-Verify the newly created documents in the `roles` and `calendars` collections by inspecting your database using the Mongo shell CLI or another database management tool (e.g. DbGate, Robo 3T).
+Expected Output:
+- `Connected correctly to server`
+- `Database seeded!`
 
-#### Seed the database
+Verify data in the `events` collection.
 
-Next you need to seed your database with default calendar events using the script `seedHolidayEvents.js`.
+## 🚀 Running the App
 
--   Open a new terminal window and run the command `node seedHolidayEvents.js`.
+### Production Mode
+1. **Build Production Assets:**
+   ```bash
+   npm run build
+   ```
+2. **Start the App:**
+   ```bash
+   npm run start
+   ```
 
-This script creates calendar events corresponding to US holidays data retrieved from the Calendarific API, and inserts them in the `US Holidays` collection in your MongoDB database.
-
-Once the workflow is complete, the following messages will appear in the terminal:
-
-```text
-  Connected correctly to server
-  Database seeded!
+#### Process Manager (PM2)
+To run with PM2:
+```bash
+npm install pm2 -g
+npm run pm2
 ```
 
-Verify the newly created documents in the `events` collection of your database. Then try reloading the page at `http://localhost:8080` in your browser to see the updated calendar events.
+### Development Mode
+```bash
+npm run dev
+```
+Expected Output: `Server started at http://localhost:3001`
 
-## Run the app
+Access the frontend at [http://localhost:8080](http://localhost:8080).
 
-To run the app in **production mode**, first build your production assets with the command `npm run build`.
+## 🔐 Authentication & Authorization
 
-NOTE: Make sure you've created a `.env.production` file with the required environment variables before running this command.
+### JSON Web Token (JWT)
+React Calendar uses **JWT** for authentication.
+- Faster database interactions
+- Better scalability
+- Portability across services
 
-This triggers a webpack workflow which bundles the source code and static assets using Webpack and emits them into the `build` folder. Once you've verified the bundled files have been created, run `npm run start` to start the app.
+Environment Variable:
+- `JWT_SECRET_KEY`: Used as the private key for JWT.
 
-### PM2
+### User Roles
+Each user document contains roles (`user`, `moderator`, or `admin`). These can be used to implement authorization if needed.
 
-PM2 is a commonly used process manager for Node.js which helps you manage and facilitate production deployments.
+## 🖥️ Frontend: React & Redux
 
-The script `npm run pm2` will launch a daemon that monitors your production app and keep it running indefinitely.
+The frontend is a **Single-Page Application (SPA)** using React and Redux:
 
-NOTE: If the `pm2` library is missing, install it first with `npm install pm2 -g` and try again.
+- **Routing:** Client-side routing via `React Router`
+- **Data Storage:** Persistent state with Redux and `localStorage`
 
-To run the app in **development mode**, run the command `npm run dev`. This triggers a webpack workflow which lints the source code, applies formatting changes based on Prettier.js configs, builds the `server.cjs` file, and serves up the frontend files in-memory via Webpack Dev Server. Once the workflow is complete, you should be able to see the server running in the terminal. If it started correctly, the following message will appear in the terminal, `Server started at http://localhost:3001`. Then try visiting `http://localhost:8080` in your browser to verify that you can access the frontend.
+If the app appears out of sync, clear `localStorage.state` and reload.
 
-NOTE: Hot module reloading is turned on by default in development mode. To turn HMR off, remove `hot: true` from the `client` config in `webpack.development.js`.
+## 🎨 Styling with CSS Modules
 
-## Authentication
+Components use **CSS Modules** for styling:
 
-React Calendar uses JSON Web Token (JWT) for authentication. JWT is a popular choice for authentication in Node.js apps for several reasons:
+- Modular and reusable styles
+- Locally-scoped class names
 
--   Fewer database queries
--   Less development time
--   Easier to scale up with userbase
--   Better portability across services
+## ⚙️ Additional Notes
 
-Since the backend of the app acts as both issuer and verifier of JWT tokens, it only needs one private key for authentication purposes. This is the environment variable designated in your `.env.*` files as `JWT_SECRET_KEY`.
+- Ensure `.env.production` contains all environment variables before building.
+- To disable Hot Module Reloading (HMR) in development, remove `hot: true` from `webpack.development.js`.
 
-IMPORTANT: Never share sensitive information such as keys or passwords! Make sure to apply appropriate security settings to prevent exposing your files.
+---
 
-### Authorization
-
-Each user document in the database includes a `roles` field which can take on one of three values: `user`, `moderator` or `admin`. These values aren't currently used for authorization purposes, but can be used to build out an authorization layer on top of the authentication workflow if desired.
-
-## React & Redux
-
-The frontend is a single-page React app that supports client-side routing via React-Router. This enables fast navigation between views and reduces the amount of network calls initiated by the frontend.
-
-NOTE: To support single-page apps in production, you will need to update the configuration of the web server used to serve your app externally (e.g Nginx).
-
-Client data is stored using Redux which promotes data consistency, reduces database calls, and allows the use of Redux Devtools for development.
-
-All updates to Redux data are also persisted to localStorage (in the object located at `localStorage.state`) for access between browser sessions. If at any point the app displays data which appears out of sync, try clearing out your browser's localStorage and reloading the browser window.
-
-## CSS Modules
-
-Components use CSS modules for styling via locally-scoped class names.
-
-CSS modules promote modular and reusable CSS and ensures:
-
--   No more conflicts
--   Explicit dependencies
--   No global scope
-
-Check out the CSS modules [Github page](https://github.com/css-modules/css-modules) for more details.
+💻 **Happy Coding!** 🎉
